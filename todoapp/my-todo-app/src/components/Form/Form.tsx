@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {ChangeEvent, FormEvent} from 'react';
 
-export const Form: React.FunctionComponent = () => {
+type FromProp ={
+  initialTodoValue: string,
+  onHandleChange: (e: ChangeEvent<HTMLInputElement>) => void,
+  onSubmit: (e: FormEvent) => void
+};
+
+export const Form: React.FunctionComponent<FromProp> = ({ initialTodoValue,  onHandleChange, onSubmit }) => {
   return(
-    <form>
-      <input type='text' placeholder='Enter todo'></input>
+    <form onSubmit={onSubmit}>
+      <input type='text' placeholder='Enter todo' value={initialTodoValue} onChange={onHandleChange}></input>
+      <input type='submit' value='submit todo'></input>
     </form>
   )
-}
+};
