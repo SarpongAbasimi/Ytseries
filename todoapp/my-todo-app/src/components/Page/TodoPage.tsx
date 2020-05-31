@@ -2,7 +2,6 @@ import React, { useState,FormEvent, ChangeEvent }  from'react';
 import { Card } from '../Card/Card';
 import  { Form }  from '../Form/Form';
 
-
 export const TodoPage : React.FunctionComponent = () => {
   const [initialTodo, setInitialTodo] = useState('');
   const [todos, setToDos] = useState<string[]>([])
