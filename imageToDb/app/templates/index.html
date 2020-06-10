@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div>
+    <img src="{{ url_for('static', filename='3to.jpeg')}}" alt='picture'>
+    {% for i in images %}
+      <img src={{ i }} alt='picture'>
+    {% endfor %}
+  </div>
+{% endblock content %}
