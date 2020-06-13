@@ -6,11 +6,8 @@ main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
 def index():
-  images = load_image()
-  return render_template('index.html', images=images)
+  api_data = os.path.join(__file__, '../data/api')
 
-def load_image():
-  home = os.environ.get('HOME')
-  image_dir = os.path.join(home, 'Desktop', 'img')
-
-  return (os.listdir(image_dir))
+  print(api_data)
+  
+  return render_template('index.html')
