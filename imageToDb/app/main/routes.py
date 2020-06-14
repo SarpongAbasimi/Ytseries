@@ -6,7 +6,8 @@ from app import db
 
 main = Blueprint('main', __name__)
 
-@main.route('/', methods=['GET'])
+@main.route('/api', methods=['GET'])
 def index():
-  # json_data = (json.dumps(data, indent=4))
-  return render_template('index.html', data=data[0]['Ghana'])
+  json_data = (json.dumps(data, indent=4))
+  print('incoming ....')
+  return json_data

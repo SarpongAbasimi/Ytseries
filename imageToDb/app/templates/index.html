@@ -1,14 +1,4 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  {% for elements in data %}
-    <div>
-      <p>{{ elements.name }}</p>
-      <ul>
-         {% for ingredients in elements.Ingredients %}
-          <li>{{ ingredients }}</li>
-         {% endfor %}
-      </ul>
-    </div>
-  {% endfor %}
 {% endblock content %}
