@@ -1,5 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block content %}
- <h1>Nothing for now</h1>
+  {% for elements in data %}
+    <div>
+      <p>{{ elements.name }}</p>
+      <ul>
+         {% for ingredients in elements.Ingredients %}
+          <li>{{ ingredients }}</li>
+         {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
 {% endblock content %}
