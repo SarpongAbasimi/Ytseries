@@ -11,11 +11,11 @@ interface FoodApi {
 export const FoodPage: React.FunctionComponent = ()=> {
 
   const [state, setState] = useState<FoodApi[]>([])
-
+  console.log(state)
   useEffect(()=> {
     fetch('/api').then(res => {
       return res.json()
-    }).then(response =>console.log(response))
-  })
-  return(<Card/>)
+    }).then(response => setState(response[0].Ghana))
+  }, [])
+  return(<Card food={state}/>)
 }

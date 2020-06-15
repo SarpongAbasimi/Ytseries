@@ -81,7 +81,7 @@ data = [
         ]
       },
       {
-        'id': 5,
+        'id': 6,
         'name': 'Anwamoo',
         'image':  '235907564149313537/photo/2',
         'Ingredients': [
@@ -95,7 +95,7 @@ data = [
         ]
       },
       {
-        'id': 6,
+        'id': 7,
         'name': 'Waakye',
         'image':  '1235907564149313537/photo/4',
         'Ingredients': [
