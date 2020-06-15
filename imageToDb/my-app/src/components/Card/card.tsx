@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 type CardProps = {
   food: {
     id: number,
@@ -8,19 +9,15 @@ type CardProps = {
     Ingredients: string[]
   }[]
 }
-
-
 export const Card: React.FunctionComponent<CardProps> = ({ food })=> {
+  console.log(food)
   return(
     <div>
-      { food.length >  0 && food.map( data => {
+      { food.length > 0 && food.map(data => {
         return(
           <div key={data.id}>
             <p>{data.name}</p>
-            <img src={data.image} alt="pictures"></img>
-            <ul>
-              {data.Ingredients.map(ingredients => <li>{ingredients }</li>)}
-            </ul>
+              {data.Ingredients.map(ig => <li>{ig}</li>)}
           </div>
         )
       })}

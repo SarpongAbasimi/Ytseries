@@ -9,13 +9,11 @@ interface FoodApi {
 }
 
 export const FoodPage: React.FunctionComponent = ()=> {
-
-  const [state, setState] = useState<FoodApi[]>([])
-  console.log(state)
+  const [data, setData] = useState<FoodApi[]>([])
   useEffect(()=> {
     fetch('/api').then(res => {
       return res.json()
-    }).then(response => setState(response[0].Ghana))
+    }).then(response => setData(response[0].Ghana))
   }, [])
-  return(<Card food={state}/>)
+  return(<Card food={data}/>)
 }
