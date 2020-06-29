@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  {% for product in products %}
+    <div>
+      <h5>{{ product['product_name']}}</h5>
+      <img src={{ url_for('static', filename=product['product_image'])}} alt="">
+    </div>
+  {% endfor %}
+{% endblock content %}
