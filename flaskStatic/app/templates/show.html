@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div>
+    {% for items in item %}
+      <h1>{{ items['product_name'] }}</h1>
+      <img src={{ url_for('static', filename= items['product_image']) }} alt={{ items['product_image'] }}>
+    {% endfor %}
+  </div>
+{% endblock content %}
