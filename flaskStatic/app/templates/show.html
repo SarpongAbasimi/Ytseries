@@ -1,10 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+  <span>
+    <a href={{ url_for('main.index') }}>Home</a>
+  </span>
   <div>
     {% for items in item %}
       <h1>{{ items['product_name'] }}</h1>
-      <img src={{ url_for('static', filename= items['product_image']) }} alt={{ items['product_image'] }}>
+      <div class='show-image'>
+        <img src={{ url_for('static', filename= items['product_image']) }} alt={{ items['product_image'] }}>
+      </div>
     {% endfor %}
+    <a href="">
+      <span>Buy product</span>
+    </a>
   </div>
 {% endblock content %}
