@@ -4,4 +4,4 @@ from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
   email = models.EmailField(unique=True, help_text= 'Please enter your email.')
-  age = models.IntegerField(blank=True, null=True)
+  age = models.PositiveIntegerField(blank=True, null=True)
