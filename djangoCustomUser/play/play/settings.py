@@ -128,4 +128,4 @@ AUTH_USER_MODEL = 'user.CustomUser'
 # Login Settings
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'home'
