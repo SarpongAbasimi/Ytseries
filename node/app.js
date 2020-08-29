@@ -3,7 +3,7 @@ app = express()
 
 require('dotenv').config()
 app.set('view engine', 'ejs')
-app.use('/', require('./routes/hello'))
+app.use('/api/', require('./routes/hello'))
 
 const PORT = process.env.PORT || 3001
 
