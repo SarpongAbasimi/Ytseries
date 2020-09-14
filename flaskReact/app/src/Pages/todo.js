@@ -1,11 +1,12 @@
 import React,{useState, useEffect} from 'react';
 import { Card } from '../Components/Card/card'
 import { Form } from '../Components/Form/form'
+import {useTrail, animated} from 'react-spring'
 
 export const TodoPage = () => {
+
   const [todo, setTodo] = useState([])
   const [addtodo, setAddTodo] = useState('')
-  // check what the user has input
 
   useEffect(()=>{
     fetch('api/').then(response => {
@@ -15,17 +16,13 @@ export const TodoPage = () => {
     }).then(data => setTodo(data))
   },[])
 
-  // useEffect(()=> {
-  //   fetch('/api/create', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       content: addtodo,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8"
-  //     }
-  //   })
-  // }, [addtodo])
+  const getLatestTodos = () => {
+    fetch('api/').then(response => {
+      if(response.ok){
+        return response.json()
+      }
+    }).then(data => setTodo(data))
+  }
   
   const handleFormSubmit = ()=> {
     fetch('/api/create', {
@@ -39,6 +36,11 @@ export const TodoPage = () => {
     }).then(response => response.json())
       .then(message => {
         setAddTodo('')
+        getLatestTodos()
+        console.log([...todo, {
+          content:addtodo,
+          id: todo.length
+        }])
         console.log(message)
       })
   }

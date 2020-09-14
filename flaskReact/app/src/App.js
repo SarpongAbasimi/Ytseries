@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import './App.css';
 
@@ -17,7 +16,7 @@ function App() {
           <Route exact path='/'> 
             <TodoPage/>
           </Route>
-          <Route path='/show/:id'> 
+          <Route path='/:id'> 
             <Show/>
           </Route>
         </Switch>
@@ -27,53 +26,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { TodoPage } from './Pages/todo';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
-
-// function App() {
-//   return (
-//     <Router>
-//         <Switch>
-//           <Route path='/'> 
-//             <TodoPage/>
-//           </Route>
-//         </Switch>
-//     </Router>
-//   );
-// }
-
-// export default App;
