@@ -10,4 +10,11 @@
     <input type="submit">
   </form>
 
+  <hr>
+  {% for i in todo %}
+    <ul>
+      {{ i.content }}
+    </ul>
+  {% endfor %}
+
 {% endblock content %}
